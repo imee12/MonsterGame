@@ -21,8 +21,8 @@ heroImage.onload = function () {
   heroReady = true;
 
 };
-heroImage.src = "images/icecram.png";
-console.log(heroImage);
+heroImage.src = "images/icecream-icon.png";
+
 //Monster image
 
 var monsterReady = false;
@@ -39,9 +39,7 @@ var hero = {
 
 };
 
-var monster = {
-
-};
+var monster = {};
 
 var monstersCaught = 0;
 
@@ -60,11 +58,11 @@ addEventListener("keyup", function (e) {
 // Reset the game when the player catches monster
 var reset = function () {
   hero.x = canvas.width / 2;
-  hero.y = canvas.heght / 2;
+  hero.y = canvas.height / 2;
 
   //Throw the monster somewhere on the screen randomly
   monster.x = 32 + (Math.random() * (canvas.width - 64));
-  monster.y = 32 + (Math.random() *(canvas.width -64))
+  monster.y = 32 + (Math.random() *(canvas.width -64));
 
 };
 
@@ -138,8 +136,8 @@ var main = function () {
 };
 
 //Cross-browser support for requestAnimation
-//var w = window;
-//requestAnimationFrame= w.requestAnimation || w.webkitRequestAnimationFrame || w.msRequestAnimationFrame || w.mozRequestAnimationFrame;
+var w = window;
+requestAnimationFrame= w.requestAnimation || w.webkitRequestAnimationFrame || w.msRequestAnimationFrame || w.mozRequestAnimationFrame;
 
 var then = Date.now();
 reset();
